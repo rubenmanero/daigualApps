@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DaigualApps">
         <activity
-            android:name=".MessageActivity"
+            android:name=".IMCApp.IMCActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,14 +24,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HelloActivity"
+            android:name=".MessageApp.MessageActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".HelloApp.HelloActivity"
             android:exported="false" />
         <activity
-            android:name=".ReplyActivity"
+            android:name=".MessageApp.ReplyActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true"/>
+            android:name=".HelloApp.MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

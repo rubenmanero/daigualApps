@@ -1,11 +1,9 @@
-package com.ruben.daigualapps
+package com.ruben.daigualapps.HelloApp
 
 import android.os.Bundle
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.ruben.daigualapps.R
 
 class HelloActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
