@@ -140,6 +140,7 @@
         android:layout_height="150dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="32dp"
+        android:padding="16dp"
         app:cardBackgroundColor="@color/background_component"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toStartOf="@id/viewAge"
@@ -171,6 +172,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -178,7 +180,7 @@
                     android:id="@+id/substractWeight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="16dp"
                     app:cardBackgroundColor="@color/background_fab"
                     app:cardCornerRadius="24dp">
 
@@ -218,6 +220,7 @@
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginTop="32dp"
+        android:padding="16dp"
         app:cardBackgroundColor="@color/background_component"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -250,13 +253,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/substractAge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="16dp"
                     app:cardBackgroundColor="@color/background_fab"
                     app:cardCornerRadius="24dp">
 
