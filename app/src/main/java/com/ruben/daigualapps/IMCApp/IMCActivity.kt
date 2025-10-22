@@ -1,7 +1,9 @@
 package com.ruben.daigualapps.IMCApp
 
+import android.content.Intent
 import android.icu.text.DecimalFormat
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,16 +12,28 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.slider.RangeSlider
 import com.ruben.daigualapps.R
+import java.lang.Math.pow
 
 class IMCActivity : AppCompatActivity() {
 
     private var isMaleSelected: Boolean = true
     private var isFemaleSelected: Boolean = false
+    private var currentWeight: Int = 60
+    private var currentAge: Int = 30
+    private var currentHeight: Int = 120
+
 
     private lateinit var viewMale: CardView
     private lateinit var viewFemale: CardView
     private lateinit var rsHeight: RangeSlider
     private lateinit var tvHeight: TextView
+    private lateinit var tvWeight: TextView
+    private lateinit var tvAge: TextView
+    private lateinit var btnSubstractWeight: CardView
+    private lateinit var btnAddWeight: CardView
+    private lateinit var btnSubstractAge: CardView
+    private lateinit var btnAddAge: CardView
+    private lateinit var btnCalculate: CardView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +48,8 @@ class IMCActivity : AppCompatActivity() {
 
         initComponents()
         initListeners()
+        setWeight()
+        setAge()
     }
 
     private fun initComponents() {
@@ -41,6 +57,13 @@ class IMCActivity : AppCompatActivity() {
         viewFemale = findViewById<CardView>(R.id.viewFemale)
         rsHeight = findViewById<RangeSlider>(R.id.rsHeight)
         tvHeight = findViewById<TextView>(R.id.tvHeight)
+        tvWeight = findViewById<TextView>(R.id.tvWeight)
+        btnSubstractWeight = findViewById<CardView>(R.id.substractWeight)
+        btnAddWeight = findViewById<CardView>(R.id.addWeight)
+        tvAge = findViewById<TextView>(R.id.tvAge)
+        btnSubstractAge = findViewById<CardView>(R.id.substractAge)
+        btnAddAge = findViewById<CardView>(R.id.addAge)
+        btnCalculate = findViewById<CardView>(R.id.btnCalculate)
     }
 
     private fun initListeners() {
@@ -48,9 +71,51 @@ class IMCActivity : AppCompatActivity() {
         viewFemale.setOnClickListener { setComponentColorFemale() }
         rsHeight.addOnChangeListener { _, value, _ ->
             val df = DecimalFormat("#")
-            val result = df.format(value)
-            tvHeight.text = "$result cm"
+            currentHeight = df.format(value).toInt()
+            tvHeight.text = "$currentHeight cm"
         }
+        btnSubstractWeight.setOnClickListener {
+            currentWeight -=1
+            setWeight()
+        }
+        btnAddWeight.setOnClickListener {
+            currentWeight +=1
+            setWeight()
+        }
+        btnSubstractAge.setOnClickListener {
+            currentAge -=1
+            setAge()
+        }
+        btnAddAge.setOnClickListener {
+            currentAge +=1
+            setAge()
+        }
+        btnCalculate.setOnClickListener {
+            val result = calculateIMC()
+            Log.i("IMC", "El IMC es $result")
+            navigateToResult(result)
+        }
+    }
+
+    private fun navigateToResult(result: Double) {
+        val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra("extra_IMC",result)
+        startActivity(intent)
+    }
+
+
+    private fun calculateIMC(): Double {
+        val df = DecimalFormat("#.##")
+        val imc = currentWeight / pow(currentHeight.toDouble()/100, 2.0)
+        return df.format(imc).toDouble()
+    }
+
+    private fun setWeight() {
+        tvWeight.text = currentWeight.toString()
+    }
+
+    private fun setAge() {
+        tvAge.text = currentAge.toString()
     }
 
     private fun setComponentColorMale() {
