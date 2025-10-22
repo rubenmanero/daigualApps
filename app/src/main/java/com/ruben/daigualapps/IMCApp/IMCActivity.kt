@@ -1,11 +1,14 @@
 package com.ruben.daigualapps.IMCApp
 
+import android.icu.text.DecimalFormat
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.slider.RangeSlider
 import com.ruben.daigualapps.R
 
 class IMCActivity : AppCompatActivity() {
@@ -15,6 +18,9 @@ class IMCActivity : AppCompatActivity() {
 
     private lateinit var viewMale: CardView
     private lateinit var viewFemale: CardView
+    private lateinit var rsHeight: RangeSlider
+    private lateinit var tvHeight: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,11 +39,18 @@ class IMCActivity : AppCompatActivity() {
     private fun initComponents() {
         viewMale = findViewById<CardView>(R.id.viewMale)
         viewFemale = findViewById<CardView>(R.id.viewFemale)
+        rsHeight = findViewById<RangeSlider>(R.id.rsHeight)
+        tvHeight = findViewById<TextView>(R.id.tvHeight)
     }
 
     private fun initListeners() {
         viewMale.setOnClickListener { setComponentColorMale() }
         viewFemale.setOnClickListener { setComponentColorFemale() }
+        rsHeight.addOnChangeListener { _, value, _ ->
+            val df = DecimalFormat("#")
+            val result = df.format(value)
+            tvHeight.text = "$result cm"
+        }
     }
 
     private fun setComponentColorMale() {
