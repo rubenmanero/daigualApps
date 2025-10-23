@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DaigualApps">
         <activity
+            android:name=".BoardgamesApp.BoardgamesActivity"
+            android:theme="@style/Theme.BoardgamesApp"
+            android:exported="false" />
+        <activity
             android:name=".IMCApp.ResultActivity"
             android:exported="false" />
         <activity
