@@ -20,6 +20,14 @@ class BoardgamesActivity : AppCompatActivity() {
         Legacy
     )
 
+    private val games = listOf(
+        Game("Frostpunk", Cooperative),
+        Game("Hero Realm", Deckbuilding),
+        Game("Agricola", Euro),
+        Game("Arkham Horror", LCG),
+        Game("Gloomhaven", Legacy)
+    )
+
     private lateinit var rvCategories: RecyclerView
     private lateinit var rvGames: RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter
@@ -44,6 +52,8 @@ class BoardgamesActivity : AppCompatActivity() {
         rvCategories.adapter = categoriesAdapter
 
         gamesAdapter = GamesAdapter(games)
+        rvGames.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        rvGames.adapter = gamesAdapter
     }
 
     private fun initComponents() {
