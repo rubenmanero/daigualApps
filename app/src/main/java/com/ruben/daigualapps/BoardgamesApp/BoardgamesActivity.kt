@@ -27,8 +27,8 @@ class BoardgamesActivity : AppCompatActivity() {
     )
 
     private val games = mutableListOf(
-        Game("Frostpunk", Cooperative),
-        Game("Hero Realm", Deckbuilding),
+        Game("Frostpunk", Cooperative, false),
+        Game("Hero Realm", Deckbuilding, true),
         Game("Agricola", Euro),
         Game("Arkham Horror", LCG),
         Game("Gloomhaven", Legacy)
@@ -55,7 +55,7 @@ class BoardgamesActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-        categoriesAdapter = CategoriesAdapter(categories)
+        categoriesAdapter = CategoriesAdapter(categories) { position -> onCategorySelected(position) }
         rvCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvCategories.adapter = categoriesAdapter
 
@@ -103,6 +103,10 @@ class BoardgamesActivity : AppCompatActivity() {
     }
 
     private fun updateGames() {
+        val selectedCategories: List<GameCategory> = categories.filter { it.isSelected }
+        val newGames: List<Game> = games.filter { selectedCategories.contains(it.category) }
+        gamesAdapter.games = newGames
+
         gamesAdapter.notifyDataSetChanged()
     }
 
@@ -110,4 +114,12 @@ class BoardgamesActivity : AppCompatActivity() {
         games[position].isSelected = !games[position].isSelected
         updateGames()
     }
+
+    private fun onCategorySelected(position:Int) {
+        categories[position].isSelected = !categories[position].isSelected
+        categoriesAdapter.notifyItemChanged(position)
+        updateGames()
+    }
+
+
 }
