@@ -44,4 +44,22 @@
         android:text="Boardgames App"
         android:textSize="25sp"/>
 
+    <Button
+        android:id="@+id/btnColorsApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="Colors App"
+        android:textSize="25sp"/>
+
+    <Button
+        android:id="@+id/btnSuperheroApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="Superhero App"
+        android:textSize="25sp"/>
+
 </LinearLayout>
