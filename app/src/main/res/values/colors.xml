@@ -89,4 +89,13 @@
     <color name="black50">#80000000</color>
     <color name="black65">#A6000000</color>
     <color name="black80">#CC000000</color>
+    <color name="rojo">#E91E1E</color>
+    <color name="naranja">#FF8000</color>
+    <color name="amarillo">#FFCC00</color>
+    <color name="verde">#2FFF00</color>
+    <color name="cian">#00FFDD</color>
+    <color name="azul">#0040FF</color>
+    <color name="violeta">#BB00FF</color>
+    <color name="gris">#767676</color>
+    <color name="negro">#000000</color>
 </resources>

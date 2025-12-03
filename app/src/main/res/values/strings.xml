@@ -49,4 +49,17 @@
     <string name="blue">Azul</string>
     <string name="violet">Violeta</string>
     <string name="black">Negro</string>
+
+
+
+    <string name="blanco">Blanco</string>
+    <string name="rojo">Rojo</string>
+    <string name="naranja">Naranja</string>
+    <string name="amarillo">Amarillo</string>
+    <string name="verde">Verde</string>
+    <string name="cian">Cián</string>
+    <string name="azul">Azul</string>
+    <string name="violeta">Violeta</string>
+    <string name="gris">Gris</string>
+    <string name="negro">Negro</string>
 </resources>

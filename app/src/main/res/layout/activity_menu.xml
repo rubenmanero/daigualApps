@@ -62,4 +62,31 @@
         android:text="Superhero App"
         android:textSize="25sp"/>
 
+    <Button
+        android:id="@+id/btnRepasoApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="Repaso App"
+        android:textSize="25sp"/>
+
+    <Button
+        android:id="@+id/btnExamen23App"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="Examen23 App"
+        android:textSize="25sp"/>
+
+    <Button
+        android:id="@+id/btnExamen24App"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="Examen24 App"
+        android:textSize="25sp"/>
+
 </LinearLayout>
