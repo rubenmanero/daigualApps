@@ -98,4 +98,9 @@
     <color name="violeta">#BB00FF</color>
     <color name="gris">#767676</color>
     <color name="negro">#000000</color>
+
+
+    <color name="tres_en_raya">#FFC107</color>
+    <color name="player1">#2196F3</color>
+    <color name="player2">#FF001B</color>
 </resources>
