@@ -2,6 +2,7 @@ package com.ruben.daigualapps
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -92,6 +93,7 @@ class MenuActivity : AppCompatActivity() {
 
     private fun navigateToExamen24App() {
         var intent = Intent(this, Examen24Activity::class.java)
+        Log.i("","")
         startActivity(intent)
     }
 }

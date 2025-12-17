@@ -53,6 +53,9 @@ dependencies {
     //Corrutinas
     implementation(libs.kotlinx.coroutines.android)
 
+    //Picasso
+    implementation (libs.picasso)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
